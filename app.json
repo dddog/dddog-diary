@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "dddog-diary",
+    "slug": "dddog-diary",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "dddog-diary"
+}

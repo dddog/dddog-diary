@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "../colors";
+import { AdMobBanner } from "expo-ads-admob";
 
 const View = styled.View`
   flex: 1;
@@ -34,6 +35,11 @@ const BtnText = styled.Text`
 const Home = ({ navigation: { navigate } }) => (
   <View>
     <Title>My journal</Title>
+    <AdMobBanner
+      style={{ backgroundColor: "red" }}
+      adUnitID="ca-app-pub-3940256099942544/6300978111"
+      bannerSize="largeBanner"
+    />
     <Btn onPress={() => navigate("Write")}>
       <Ionicons name="add" color="white" size={40} />
     </Btn>

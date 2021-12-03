@@ -65,15 +65,21 @@ const EmotionText = styled.Text`
 
 const emotions = ["😂", "🥰", "🤮", "🥶", "🤩"];
 
-const Write = () => {
+const Write = ({ navigation: { goBack } }) => {
   const [feeling, setFeeling] = useState("");
   const [selectEmotion, setEmotion] = useState(null);
   const onChangeText = (text) => setFeeling(text);
   const onEmotionPress = (face) => setEmotion(face);
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (feeling === "" || selectEmotion == null) {
       return Alert.alert("Please complate form.");
     }
+    await AdMobInterstitial.setAdUnitID(
+      "ca-app-pub-3940256099942544/1033173712"
+    );
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });
+    await AdMobInterstitial.showAdAsync();
+    // goBack();
   };
   console.log(feeling, selectEmotion);
   return (

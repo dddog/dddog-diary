@@ -79,8 +79,10 @@ const Write = ({ navigation: { goBack } }) => {
     await AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5224354917"); // Test ID, Replace with your-admob-unit-id
     await AdMobRewarded.requestAdAsync();
     await AdMobRewarded.showAdAsync();
-
-    // goBack();
+    AdMobRewarded.addEventListener("rewardedVideoUserDidEarnReward", () => {
+      console.log("보상을 주고 로직을 처리하는 부분");
+      goBack();
+    });
   };
   console.log(feeling, selectEmotion);
   return (

@@ -1,3 +1,4 @@
+import { AdMobInterstitial, AdMobRewarded } from "expo-ads-admob";
 import React, { useState } from "react";
 import { Alert, Platform } from "react-native";
 import styled from "styled-components/native";
@@ -74,11 +75,11 @@ const Write = ({ navigation: { goBack } }) => {
     if (feeling === "" || selectEmotion == null) {
       return Alert.alert("Please complate form.");
     }
-    await AdMobInterstitial.setAdUnitID(
-      "ca-app-pub-3940256099942544/1033173712"
-    );
-    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });
-    await AdMobInterstitial.showAdAsync();
+
+    await AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5354046379"); // Test ID, Replace with your-admob-unit-id
+    await AdMobRewarded.requestAdAsync();
+    await AdMobRewarded.showAdAsync();
+
     // goBack();
   };
   console.log(feeling, selectEmotion);

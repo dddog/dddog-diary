@@ -76,7 +76,7 @@ const Write = ({ navigation: { goBack } }) => {
       return Alert.alert("Please complate form.");
     }
 
-    await AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5354046379"); // Test ID, Replace with your-admob-unit-id
+    await AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5224354917"); // Test ID, Replace with your-admob-unit-id
     await AdMobRewarded.requestAdAsync();
     await AdMobRewarded.showAdAsync();
 
